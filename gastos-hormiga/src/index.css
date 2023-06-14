@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Circular Black';
+    src: url('assets/fonts/circularstdblack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Circular Bold';
+    src: url('assets/fonts/circularstdbold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Circular Light';
+    src: url('assets/fonts/circularstdlight.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Circular Medium';
+    src: url('assets/fonts/circularstdmedium.ttf') format('truetype');
+}
+
+::selection {
+    background-color: #082f49;
+    color: #fff;
+}
+
+::placeholder {
+    color: #006568;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #006568;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #006568;
+}
+
+.circular-black {
+    font-family: 'Circular Black', sans-serif;
+}
+
+.circular-bold {
+    font-family: 'Circular Bold', sans-serif;
+}
+
+.circular-light {
+    font-family: 'Circular Light', serif;
+}
+
+.circular-medium {
+    font-family: 'Circular Medium', serif;
+}
+
+input {
+    font-family: 'Circular Light', serif;
+    color: rgba(0, 101, 104, 1);
+}
+
+input:active {
+    border: solid 1px rgba(0, 101, 104, .4);
+}
+
+input:focus {
+    border: solid 1px rgba(0, 101, 104, .4);
+    outline: none;
+}
+
+/* Home */
+.home-screen {
+    background-image: linear-gradient(40deg,
+            hsl(191deg 20% 36%) 0%,
+            hsl(189deg 19% 41%) 2%,
+            hsl(186deg 18% 47%) 4%,
+            hsl(182deg 18% 53%) 10%,
+            hsl(179deg 22% 59%) 19%,
+            hsl(175deg 27% 65%) 36%,
+            hsl(171deg 36% 72%) 99%);
+    background-image: url('../src/assets/img/Fondos_portada.png');
+    background-size: cover;
+}
+
+.title-pregunta {
+    color: #006568;
+}
+
+/* Visualización */
+#viz svg:nth-child(2) {
+    display: none !important;
+}
+
+#viz svg:nth-child(1) {
+    transform: scale(.75) translateX(-4rem) translateY(-10rem);
+}
+
+#inside-inside.show img {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+#inside-inside img {
+    opacity: 0;
+}
+
+.dataviz-page {
+    background-color: #e1e5e4;
+    background-image: url('../src/assets/img/Fondos_Visualizacion.png');
+}
+
+.node {
+    cursor: grab;
+}
+
+circle.node {
+    cursor: pointer;
+    stroke: #34495e;
+    stroke-width: 0px;
+    box-sizing: border-box;
+    stroke-location: inside;
+}
+
+line.link {
+    stroke: #006568;
+    stroke-width: 1.5px;
+    stroke-dasharray: 3, 3;
+}
+
+/* Progress Bar */
+.option-top {
+    position: absolute;
+    z-index: 100;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+}
+
+.option-middle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.option {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: navy;
+
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    background: white;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    animation: 2s infinite;
+    animation-name: pulse-white;
+}
+
+@keyframes pulse-white {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.option-0 {
+    top: -60px;
+}
+
+.option-3 {
+    right: -60px;
+}
+
+.option-5 {
+    bottom: -60px;
+}
+
+.option-7 {
+    left: -60px;
+}
+
+.option-top-color {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.option-middle-color {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.option-color {
+    border: solid 3px #9abdbc;
+    background-color: #fff;
+}
+
+/* Empieza codigo de progress bar */
+
+.circle-wrap {
+    width: 440px;
+    height: 440px;
+    background: rgba(255, 255, 255, .22);
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+    width: 440px;
+    height: 440px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 510px, 510px, 220px);
+}
+
+.circle-wrap .inside-circle {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    background: #9abdbc;
+    line-height: 416px;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: 35px;
+    color: #1e51dc;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-inside-circle {
+    border-radius: 50%;
+    display: flex;
+    background: rgb(135, 192, 183);
+    background: linear-gradient(180deg, rgba(135, 192, 183, 1) 0%, rgba(92, 159, 154, 1) 100%);
+    column-gap: 1rem;
+    height: 290px;
+    width: 290px;
+    align-items: center;
+    align-content: center;
+    grid-row-gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.dotted-circle {
+    position: absolute;
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    border: dotted 3px rgba(255, 255, 255, .5);
+}
+
+/* 3rd progress bar */
+.mask .fill {
+    clip: rect(0px, 220px, 380px, 0px);
+    background-color: #cae8e2;
+}
+
+.mask.full,
+.circle .fill {
+    animation: ease-in-out 3s forwards;
+    /*animation-name:  fill;*/
+    /*transform: rotate(135deg);*/
+}
+
+@keyframes fill-0 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes fill-3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes fill-5 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes fill-7 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+/* Página de preguntas */
+.question-screen {
+    background-image: url('../src/assets/img/Fondos_preguntas.png');
+    background-size: cover;
+}
+
+/* Página de QR */
+.qr-page {
+    background-image: url('../src/assets/img/Fondos_Gracias.png');
+    background-size: cover;
+}

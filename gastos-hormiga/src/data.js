@@ -1,0 +1,51 @@
+export const questions = [
+  {
+    id: 1,
+    key: "Cafe",
+    question: "¿Cuántas veces compras café a la semana?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/cafe.png",
+  },
+  {
+    id: 2,
+    key: "Antojos",
+    question: "¿Cuántas veces a la semana gastas en antojos?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/antojos.png",
+  },
+  {
+    id: 3,
+    key: "Propina",
+    question: "¿Cuántas veces a la semana das propina?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/propina.png",
+  },
+  {
+    id: 4,
+    key: "Agua",
+    question: "¿Cuántas veces a la semana compras botellas de agua?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/agua.png",
+  },
+  {
+    id: 5,
+    key: "Domicilio",
+    question: "¿Cuántas veces a la semana pides comida a domicilio?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/comida-domicilio.png",
+  },
+  {
+    id: 6,
+    key: "Cigarros",
+    question: "¿Cuántas veces a la semana compras cigarros?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/cigarros.png",
+  },
+  {
+    id: 7,
+    key: "Restaurante",
+    question: "¿Cuántas veces a la semana comes fuera de casa?",
+    answers: [0, 3, 5, 7],
+    img: "src/assets/img/restaurantes.png",
+  },
+];
